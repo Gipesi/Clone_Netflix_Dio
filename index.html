@@ -1,0 +1,106 @@
+<!DOCTYPE html> <!---->
+<html lang="pt-br"> <!--informações de idioma-->
+<head><!--cabeça parte pensante do código,instruções que coordena ,são configurações-->
+    <meta charset="UTF-8"><!--para aceitar caracteres acentuados-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!---->
+    <link rel="stylesheet" href="style/main.css"><!--local onde esta meu arquivo css para o estilizar o site-->
+
+    <!--responsividade-->
+    <link rel="stylesheet" href="style/responsive.css">
+
+    <!--arquivos owl css depois de baixados sendo referenciados-->
+    <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
+
+    <title>Projeto Netflix</title><!--titulo da aba -->
+</head>
+<body><!--responsável pelo corpo do site -->
+    <header><!--tag header => cabeçalho onde vamos fazer nosso menu  são como se fossem caixas-->
+        <div class="container"><!--criando uma classe parao container que abrange o logo e a navegação -->
+            <h2 class="logo">NETFLIX</h2> <!--através da criação da classe para o logo class="nome"-->
+            <nav><!--tag semantica para menus de navegação-->
+                <a href="#">Inicio</a>
+                <a href="#">Séries</a>
+                <a href="#">Filmes</a>
+                <a href="#">Documentários</a>
+            </nav>
+        </div>
+    </header>
+
+    <!--div com conceito semantico para  trabalhar como miolo do nosso site que vai ficar 
+     dentro de uma tag chamada main -->
+    <main> </main> 
+        <div class="filme-principal"> <!--wrapper-->
+            <div class="container">
+                <h3 class="titulo">I AM BRUCE LEE</h3>
+                <p class="descricao">Lutadores, atletas, atores e diretores falam sobre a extraordinária história de vida de Bruce Lee. Ele é universalmente conhecido como o pioneiro que levou as artes marciais no cinema a um outro nível.</p>
+                <div class="botoes">
+                    <button role="button" class="botao">
+                        <!--codigo copiado do site https://fontawesome.com/ para o botão de play-->
+                        <i class="fas fa-play"></i>
+                        ASSISTIR AGORA
+                    </button>
+                    <!--função role para especificar qual a função do botão para alguns sistemas mobile tablet é necessário 
+                    especificar qual a função do botão -->
+                    <button role="button" class="botao">
+                        <!--codigo copiado do site https://fontawesome.com/ para o botão de informações-->
+                        <i class="fas fa-info-circle"></i>
+                        MAIS INFORMAÇÕES
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--com base na documentação do owl vamos construir aqui a nossa segunda parte que é a parte do carrossel-->
+    <!--criando um classe com div -->
+    <div class="carrosel-filmes">
+        <!--referencia com um tema padrão owl-theme -->
+        <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/1.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/2.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/3.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/4.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/5.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/6.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/7.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/8.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/9.jpg" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="img/Documentario/Brucelee/10.jpg" alt="" srcset="">
+                </div>
+        </div>
+    </div>
+
+
+     <!--cadastro feito no fontawesome , o arquivo fica referenciado na nuvem -->
+    <script src="https://kit.fontawesome.com/6db523a1d5.js" crossorigin="anonymous"></script>
+    <!--jquery jQuery é uma biblioteca de funções JavaScript que interage com o HTML,
+    desenvolvida para simplificar os scripts interpretados no navegador do cliente
+    Jquery Owl Carousel é um plugin que permite a criação de um carrossel (slide)
+    responsivo, com função Touch em dispositivos móveis. -->
+    <script src="js/owl/jquery.min.js"></script>
+    <script src="js/owl/owl.carousel.min.js"></script>
+    <script src="js/owl/setup.js"></script>
+ 
+
+ 
+</body>
+</html>

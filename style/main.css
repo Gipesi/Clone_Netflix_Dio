@@ -1,0 +1,182 @@
+
+/* neste momento estou declarando variáveis dentro do Css , preciso especificar apartir da raiz Root e especifico 
+a variavel --vermelha e --preta para as cores respectivas . 
+*/
+:root{
+    --vermelho:#E50914;
+    --preta:#141414;
+}
+
+/* cada navegador joga um valor de padding e um valor de margem . Esse valor pode não ser padronizado , Isso significa que 
+podemos construiur um site que funciona de uma forma em um navegador e em outro navegador vai ter um comportamento diferente. 
+ Então usamos Tecnica  comum que se chama reset CSS para não termos o risco de nosso site ficar com comoportamentos diferentes em navegdores diferentes
+    e colocando um asterisco ele se refere a todo documento que esta sendo rendereizado ali dentro*/
+*{ 
+    margin:0;
+    padding:0;
+
+    /*box box-sizing => dessa maneira os componentes tenham um tamanho limitado a borda da caixa , se os elementos não couberem 
+    eles vão se expremer e vão caber dentro da caixa. */
+    box-sizing: border-box;
+}
+
+/********elementos base*************/
+body{
+    /* utilizando as váriaveis de cor para o fundo do body é necessário especificar que estou utilizando uma váriável
+    que foi declarada no root com a palavra var + nome na variavel entre parenteses ==> var(--preta);
+    TODOS ELEMENTO QUE FOREM FILHOS DO BODY (HEADER , DIV ,NAV,.....IRÃO ERDAR AS CARACTERISTICAS DO PAI */ 
+
+   background: var(--preta);
+   font-family: 'Arial', Times, serif;
+   color:white;
+}
+
+
+header .container{ /* css referenciando a classe que criei no htmls usando  <div class="container"> utilizo (ponto + nome da classe*/
+    /*utilizando flex box*/
+    display:flex;
+    flex-direction: row;
+    /* alinha nosos documentos de forma vertical */
+    align-items: center; 
+    /* alinha nossos elementos de maneira horizontal*/
+    justify-content: space-between; 
+    
+}
+
+
+/*   quero que a cor da nossa fonte utilize a cor vermelha e também a font-family para arial black , times para demais 
+fontes caso não tenha na maquina da pessoa           */
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size:40px;
+}
+
+
+
+/*remoção das linhas com a opção none*/
+header nav a{
+    text-decoration:none;
+    color:#AAA;
+    margin-right: 10px; /* para afastar os textos entre eles a direita inicio series filmes documentarios*/
+}
+
+
+header nav a:hover{ /* toda vez que colocar o mouse em cima dos textos se destaca para a cor declarada inicio series filmes documentarios */
+    color:#fff;
+}
+
+/********filme principal*************/
+
+/*referenciando a minha classe principal */
+
+.filme-principal{ 
+    font-size:16px;
+    /*linear gradiente cria um linear do fundo com o texto em cima para ficar melhor visivel
+    deve-se passar duas vezes a cor senão da pau */
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%),  url('/img/Documentario/Brucelee/capa_1.jpg');
+
+    height: 400px;
+    background-size:cover; /*imagem vai pegar a area de cobertura da caixa */
+ 
+
+    display: flex;
+    /*flex direction em linha row que vem como padrão e mudamos para column*/
+    flex-direction: column;
+    justify-content: center;
+    /*elemento começando */
+    align-items: flex-start;
+}
+
+
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao{
+    /* efeito de transparencia com as cores rgb e a camada alta com 50*/
+    background-color: rgba(0,0,0,.50);
+    /* tirando a borada padrão */
+    border:none;
+    color: white;
+    /* os valores são verificados no sentido horário quando passo dois valores para o padding o primeiro valor 
+    vai ser para cima ou baxo e o segundo valor vai ser para esquerda ou direita \*/
+    padding:15px 30px;
+    /*margin-right para margem entre os dois botões*/
+    margin-right: 15px;
+    font-size: 12px;
+
+    /* pointer => funão para quando o usuário passar o mouse por cima do objeto identificar que ali existem um elemento botão */
+    cursor: pointer;
+    /*propriedade transition é responsavel pela mudança de estado para a mudança das animações*/
+    transition: .3s ease all;
+}
+
+
+/*  fazendo mudar  a cor quando passo o mouse em cima do botão mudo o que era preto fica branco e o que era 
+branco fica preto */
+.botao:hover{
+    background-color:white;
+    color:black;
+}
+
+
+/* relacionado ao icone através do objeto "i" com a clase criada botão consigo colocar uma margem 
+de 8px até a string existente no botão */
+.botao i{
+    margin-right: 10px;
+}
+
+
+/*
+# WRAPPER  => ENVELOPAR ,OU ENVELOPE
+O OBJETIVO DA CLASSE CONTEINER E JUSTAMENTE ENVELOPAR TUDO :
+POR PADRÃO GERALMENTE WRAPPER É UMA DIV QUE GUARDA TODAS OS DEMAIS ELEMENTOS 
+QUE SÃO INFLUENCIADOS PELOS FILHOS 
+SÃO CLASSES QUE ENVELOPAM UM CONJUNTO DE ELEMENTOS PARA FACILITAR A ATUALIZAÇÃO DOS ELEMENTOS QUANTO 
+A POSIÇÃO , COR , ESTILO DE TEXTO , TAMANHO .
+A IDEIA DE TRABALHAR COM ENVELOPE E QUANDO PRECISO MOVER OS ELEMENTOS EU MOVIMENTO APENAS A CAIXA. 
+
+
+
+
+*/
+
+
+.container{
+    margin-left: 20px;
+}
+
+
+/* estou alterando apenas o container que esta dentro do .filme-principal vai ter uma limitação de 70 % para o seu 
+maximo , o texto não vai chegar até o outro lado da tela */
+.filme-principal .container{
+    width: 50%;
+}
+
+
+/* criando aqui uma classe para colocar o tamanho das imagens largura e altura
+vou usar esta clase dentro dos elementos de imagem*/
+.box-filme{
+    height: 50%;
+    width: 50%;
+    display: block;
+    cursor: pointer;
+}
+
+/*para descgrudar as figuras do carrossel */
+.carrosel-filmes{
+    margin-top:5px;
+}
+
+
